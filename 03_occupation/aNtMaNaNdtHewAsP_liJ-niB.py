@@ -6,11 +6,11 @@
 import random
 
 l = []
-with open('occupation.csv') as f:
+with open('occupations.csv') as f:
 	l = f.read().split("\n") # fill list with rows of csv
 
 l.pop(0) #remove header
-
+l.pop() #remove total
 
 d = {} #create dictionary for occupation (key) and percentage (value)
 psum = 0.0 #use prefix sum for random selection (see below $)
