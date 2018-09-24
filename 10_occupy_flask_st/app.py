@@ -11,54 +11,58 @@ app = Flask(__name__)
 # following code borrowed from Bill Ni
 
 htmld = {}
+occdict = {} #create dictionary for occupation (key) and percentage (value)
 
 def occ():
-	l = []
+	listofoccs = []
 	with open('data/occupations.csv') as f:
-		l = f.read().split("\n") # fill list with rows of csv
+		listofoccs = f.read().split("\n") # fill list with rows of csv
 
-	l.pop(0) #remove header
-	l.pop() #remove total
+	listofoccs.pop(0) #remove header
+	listofoccs.pop() #remove total
 
-	d = {} #create dictionary for occupation (key) and percentage (value)
 	psum = 0.0 #use prefix sum for random selection (see below $)
 
 	#loop through rows to process/eliminate quotes
-	for s in l:
-		if s[0:1] == '"': #check for quote
-			for i in range(1,len(s)):
-				if s[i:i+1] == '"': #look for matching quote
-					temp = [s[1:i], s[i+2:]] #remove and split
+	for occs in listofoccs:
+		if occs[0:1] == '"': #check for quote
+			for i in range(1,len(occs)):
+				if occs[i:i+1] == '"': #look for matching quote
+					temp = [occs[1:i], occs[i+2:]] #remove and split
 					break #stop looking for quote
 		else:
-			temp = s.split(",") #if no quotes
+			temp = occs.split(",") #if no quotes
 		
 		temp[1] = float(temp[1]) #convert string percentage into float
 		psum += temp[1] #add percentage to prefix sum
 
 		htmld[temp[0]] = temp[1]
-		d[temp[0]] = psum #assign dictionary value to prefix sum
+		occdict[temp[0]] = psum #assign dictionary value to prefix sum
 
 	x = random.random() * 100 #select random float
 
-	keys = list(d.keys()) #get dictionary keys
+	return list(d.keys()) #get dictionary keys
 
+	
+def randOcc(keys):
 	b = False
-	s = ""
+	string = ""
 	for k in keys: #loop through %s to find min that is greater than random num
 		if x < d[k]:
-			s = k #found it!
+			string = k #found it!
 			b = True
 			break
 
 	if not b:
-		s = "Unemployed" #didn't find it :(((
+		string = "Unemployed" #didn't find it :(((
 
-	return s
+	return string
+
+keys = occ()
 
 @app.route("/occupations")
 def display():
-	s = occ() #use this to generate new random occupation each refresh
+	s = randOcc(keys) #use this to generate new random occupation each refresh
 	return render_template("ting.html", occdict=htmld, randocc=s)
 
 if __name__ == "__main__":
