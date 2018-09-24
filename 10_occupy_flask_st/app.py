@@ -1,3 +1,5 @@
+
+
 import random
 from flask import Flask, render_template
 
@@ -51,9 +53,9 @@ def occ():
 
 	return s
 
-@app.route("/")
+@app.route("/occupations")
 def display():
-	s = occ()
+	s = occ() #use this to generate new random occupation each refresh
 	return render_template("ting.html", occdict=htmld, randocc=s)
 
 if __name__ == "__main__":
