@@ -1,4 +1,7 @@
-
+#cOpS aNd rObBeRs - Robin Han, Bill Ni
+#SoftDev1 pd8
+#K10 -- Jinja Tuning
+#2018-09-21
 
 import random
 from flask import Flask, render_template
