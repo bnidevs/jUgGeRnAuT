@@ -39,16 +39,15 @@ def occ():
 		htmld[temp[0]] = temp[1]
 		occdict[temp[0]] = psum #assign dictionary value to prefix sum
 
-	x = random.random() * 100 #select random float
-
-	return list(d.keys()) #get dictionary keys
+	return list(occdict.keys()) #get dictionary keys
 
 	
 def randOcc(keys):
+	x = random.random() * 100 #select random float
 	b = False
 	string = ""
 	for k in keys: #loop through %s to find min that is greater than random num
-		if x < d[k]:
+		if x < occdict[k]:
 			string = k #found it!
 			b = True
 			break
