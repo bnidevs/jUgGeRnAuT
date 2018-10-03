@@ -13,9 +13,6 @@ app.secret_key = os.urandom(32);
 usnm = "bni"
 psswd = "1234"
 
-uBool = None
-pBool = None
-
 @app.route("/", methods=["GET","POST"])
 def display():
     if 'username' in session:
@@ -32,16 +29,13 @@ def login():
         session['username']=usnm
         return render_template("welcome.html",username=usnm)
     elif not uBool or not pBool:
-        return redirect(url_for("error"))
+        flash("Oops something went wrong")
+        flash("Username correct?: " + str(uBool))
+        flash("Password correct?: " + str(pBool))
+        return render_template("login.html")
     else:
         return render_template("login.html")
 
-@app.route("/err", methods=["GET", "POST"])
-def error():
-    flash("Oops something went wrong")
-    flash("Username correct?: " + str(uBool))
-    flash("Password correct?: " + str(pBool))
-    return render_template("login.html")
 
 @app.route("/logout", methods=["GET","POST"])
 def logout():

@@ -8,16 +8,16 @@ Login
 <center>
 
   {% with errmsgs = get_flashed_messages() %}
-    {% if errmsgs %}
-      <br> 
-      {% for msg in errmsgs %}
-        <h3> {{ msg }} </h3>
-      {% endfor %}
-    {% endif %}
+  {% if errmsgs %}
+  <br> 
+  {% for msg in errmsgs %}
+  <h3> {{ msg }} </h3>
+  {% endfor %}
+  {% endif %}
   {% endwith %}
-    
-<h1> Login </h1>
-<p> Please input your credentials </p>
+  
+  <h1> Login </h1>
+  <p> Please input your credentials </p>
 
 
   <br>	<br>
