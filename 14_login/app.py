@@ -29,12 +29,15 @@ def login():
         uBool= "user" in list(request.form.keys()) and request.form["user"]== usnm
         pBool= "pass" in list(request.form.keys()) and request.form["pass"]== psswd
         
-	if uBool and pBool:
-        return render_template("welcome.html",username=usnm)
-	elif not uBool or not pBool:
-        return render_template("error.html",userBool= str(uBool),passBool= str(pBool))
-	else:
-        return render_template("login.html")
+        if uBool and pBool:
+        		return render_template("welcome.html",username=usnm)
+        elif not uBool or not pBool:
+        		flash("something went wrong. <br>"+
+        		"username correct:"+ str(uBool)+
+        		"password correct:" + str(pBool))
+        		#return render_template("login.html")
+        else:
+      			return render_template("login.html")
                 
 @app.route("/logout", methods=["GET","POST"])
 def logout():
