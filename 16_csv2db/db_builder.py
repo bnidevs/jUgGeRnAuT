@@ -18,7 +18,7 @@ c.execute("CREATE TABLE courses(code TEXT, mark INTEGER, id INTEGER)")
 with open("courses.csv") as csvfile:
 	read = csv.DictReader(csvfile)
 	for row in read:
-		c.execute("INSERT INTO courses (code, mark, id) VALUES('" + row["code"] + "','" + row["mark"] + "','" + row["id"] + "')" )
+		c.execute("INSERT INTO courses (code, mark, id) VALUES('" + row["code"] + "'," + row["mark"] + "," + row["id"] + ")" )
 		
 # c.execute("SELECT * FROM courses")
 # print( c.fetchall())
@@ -37,7 +37,7 @@ c.execute("CREATE TABLE peeps(name TEXT, age INTEGER, id INTEGER)")
 with open("peeps.csv") as csvfile:
 	read = csv.DictReader(csvfile)
 	for row in read:
-		c.execute("INSERT INTO peeps (name, age, id) VALUES('" + row["name"] + "','" + row["age"] + "','" + row["id"] + "')" )
+		c.execute("INSERT INTO peeps (name, age, id) VALUES('" + row["name"] + "'," + row["age"] + "," + row["id"] + " )" )
 		
 # c.execute("SELECT * FROM peeps")
 # print( c.fetchall())
