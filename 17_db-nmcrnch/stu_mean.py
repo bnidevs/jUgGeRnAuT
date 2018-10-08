@@ -11,6 +11,8 @@ c1 = dbcourses.cursor()
 dbstudents = sqlite3.connect("derivativeballoon.db")
 c2 = dbstudents.cursor()
 resetc1()
+dbtable = sqlite3.connect("dinoball.db") # courses
+c3 = dbtable.cursor()
 
 print("gradeLookup test:\n")
 
@@ -51,7 +53,7 @@ print("\n\n\n")
 resetc2()
 resetc1()
 
-print("displayStuInfo test:")
+print("displayStuInfo test:\n")
 
 def displayStuInfo(stuid, cursor1, cursor2):
 	rtrnStr = ""
@@ -68,3 +70,24 @@ def displayStuInfo(stuid, cursor1, cursor2):
 print(displayStuInfo(3, c1, c2))
 
 print("\n\n\n")
+
+print("createTable test:\n")
+
+def createTable(cursor):
+        cursor.execute("CREATE TABLE peeps_avg(id INTEGER PRIMARY KEY, average INTEGER)")
+        
+createTable(c3)
+c3.execute("SELECT * FROM peeps_avg")
+print(c3.fetchall())
+
+print("\n\n\n")
+
+def add_course(code, new_id, mark,cursor):
+        cursor.execute('INSERT INTO courses VALUES({},{},{})'.format(code,new_id,mark))
+
+print("add_course test:\n")
+
+add_course("engrish", 5, 98, c1)
+resetc1()
+c1.execute("SELECT * FROM courses")
+print(c1.fetchall())
