@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.0/css/foundation.min.css">
   </head>
   <body>
+
+    <br>
+    <br>
+
     <div class="grid-container">
       <div class="grid-x grid-padding-x">
-        <div class="large-12 cell">
+        <div class="large-12 cell" style="border: 1px solid #000000;">
           <h1>Foundation Demonstration</h1>
         </div>
       </div>
@@ -20,28 +24,25 @@
 
       <div class="grid-x grid-padding-x">
         <div class="large-3 medium-3 small-3 cell">
-          <div class="primary callout">
-            <ul class="dropdown menu" data-dropdown-menu>
-              <p>
-                <li><a href="#">who meme r u?</a>
-                  <ul class="vertical menu nested">
-                    <li><a href="https://ih0.redbubble.net/image.297483516.4369/flat,1000x1000,075,f.jpg">Shrek</a></li>
-                    <li><a href="https://upload.wikimedia.org/wikipedia/en/f/f9/Dat_Boi_%28resized_50%25%29.jpg">Dat Boi</a></li>
-                    <li><a href="https://tribcw33.files.wordpress.com/2016/09/pepe-frog.jpg?quality=85&strip=all&w=300&strip=all">Pepe</a></li>
-                    <li><a href="https://usatftw.files.wordpress.com/2017/05/spongebob.jpg?w=1000&h=600&crop=1">sPoNgEbOb</a></li>
-                    <li><a href="https://usatftw.files.wordpress.com/2016/12/epa_usa_gorilla_822573621.jpg?w=1000&h=600&crop=1">Harambe</a></li>
-                    <li><a href="https://media0dk-a.akamaihd.net/87/16/2cda3e87c8d45e18cc7e3e931c26a244.jpg">Patrick</a></li>
-                  </ul>
-                </li>
-              </p>
-            </ul>
-          </div>
+          <h3>Row of cells</h3>
+          Cells are an organization of HTML in Foundation.
+          Each website has a horizontal size of 12 and is split accordingly with different sized cells.
+          So 4 3-cells would make up a whole row.
+          Cells left-justify by default, so if you had 3 3-cells, all 3 of them would stick together to the left.
         </div>
 
-        <div class="large-3 medium-3 small-3 cell">
+        <div class="large-1 medium-1 small-1 cell" style="border: 1px solid #000000;">
+          <h1 style="font-size:120px"><</h1>
+
+          <br>
+          <br>
+          <br>
+
+          this is a size-1 cell
+
         </div>
 
-        <div class="large-4 medium-4 small-4 cell">
+        <div class="large-4 medium-4 small-4 cell" style="border: 1px solid #000000;">
 
           <h4>sum memes to sate u</h4>
 
@@ -53,6 +54,32 @@
           <a href="https://pbs.twimg.com/media/Dibvn16VQAAnzRx.jpg" class="success button">ligma</a>
           <a href="https://i.kym-cdn.com/entries/icons/mobile/000/017/830/reee.jpg" class="alert button">rEeEeEEEEEe</a>
           <a href="https://i.imgflip.com/1tkp1e.jpg" class="secondary button">noice</a>
+
+          <br>
+          <br>
+          <br>
+
+          this is a size-4 cell
+        </div>
+
+        <div class="large-4 medium-4 small-4 cell" style="border: 1px solid #000000;">
+
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+
+          this is a size-4 cell
+        </div>
+      </div>
+
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 cell" style="border: 1px solid #000000;">
+          <h3> this is a size-12 cell </h3>
         </div>
       </div>
 
@@ -60,14 +87,14 @@
       <br>
 
       <div class="grid-x grid-padding-x">
-        <div class="large-6 cell">
+        <div class="large-6 cell"  style="border: 1px solid #000000;">
           <h3>which meme should die</h3>
           <input type="checkbox" name="meme" value="m1" id="1"><label for="xd">no u</label>
           <input type="checkbox" name="meme" value="m2" id="2"><label for="xd">whomst've'ed</label>
           <input type="checkbox" name="meme" value="m3" id="3"><label for="xd">i don't feel so good</label>
         </div>
 
-        <div class="large-6 cell">
+        <div class="large-6 cell"  style="border: 1px solid #000000;">
           <h3>which meme should live</h3>
           <input type="checkbox" name="meme" value="m1" id="1"><label for="xd">fortnite dancing</label>
           <input type="checkbox" name="meme" value="m2" id="2"><label for="xd">waow</label>
@@ -104,10 +131,5 @@
       </div>
 
     </div>
-
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/vendor/what-input.js"></script>
-    <script src="js/vendor/foundation.js"></script>
-    <script src="js/app.js"></script>
   </body>
 </html>
