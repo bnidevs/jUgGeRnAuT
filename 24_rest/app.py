@@ -12,7 +12,9 @@ def display():
 	data["lat"] = "1.5"
 	data["date"] = "2014-02-01"
 	data["cloud_score"] = "True"
-	data["api_key"] = "dfWBHYGg1JQCpauQJ08a7QpdPiaXz9wTN4hfiXeX"
+	
+	try: data["api_key"] = open("key.txt").read()
+	except: data["api_key"] = "DEMO_KEY"
 
 	url += parse.urlencode(data)
 

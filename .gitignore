@@ -104,4 +104,7 @@ venv.bak/
 .mypy_cache/
 
 # API Keys
+24_rest/key.txt
 25_rest/key.txt
+26/key.txt
+26/newskey.txt
