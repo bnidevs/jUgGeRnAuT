@@ -4,7 +4,7 @@ worK repository for SoftDev 2018-2019 :: Bill Ni
 ## worK
 
 * ### [K02_randomizer](https://github.com/bnidevs/jUgGeRnAuT/tree/master/02_randomizer)
-* * good practice for python coming back, selects random student from selected group
+ * good practice for python coming back, selects random student from selected group
 
 * ### [K03_occupation](https://github.com/bnidevs/jUgGeRnAuT/tree/master/03_occupation)
 ** prints random occupation from csv based on percentage of employment of job type
