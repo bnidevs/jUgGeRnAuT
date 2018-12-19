@@ -1,22 +1,26 @@
-document.getElementById('fibcall').addEventListener('click', fibonacci);
-
 var fibonacci = () => {
   var n = document.getElementById('fibnum').value;
   var window = [0, 1];
 
   if(n < 2){
-    console.log(window[n]);
+    document.getElementById('fibval').innerHTML = (window[n]);
   }else{
     var inc = 2;
     while(inc <= n){
       window[inc % 2] = window[(inc + 1) % 2] + window[inc % 2];
       inc++;
     }
-    console.log(window[(inc - 1) % 2]);
+    document.getElementById('fibval').innerHTML = (window[(inc - 1) % 2]);
   }
 }
 
-var gcd = (a, b) => {
+var gcd = () => {
+  var a = document.getElementById('gcdA').value;
+  var b = document.getElementById('gcdB').value;
+  document.getElementById('gcdval').innerHTML = gcdhelper(a, b);
+}
+
+var gcdhelper = (a, b) => {
   if(b == a){
     return a;
   }else if(a == 0){
@@ -26,15 +30,15 @@ var gcd = (a, b) => {
   }else{
     if(b > a){
       b = b % a;
-      return gcd(a, b);
+      return gcdhelper(a, b);
     }else{
       a = a % b;
-      return gcd(a, b);
+      return gcdhelper(a, b);
     }
   }
 }
 
 var randomStudent = () => {
   var names = ["brian", "amy", "catherine"];
-  return names[Math.floor(Math.random() * 3)];
+  document.getElementById('rsval').innerHTML = names[Math.floor(Math.random() * 3)];
 }

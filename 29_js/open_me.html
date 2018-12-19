@@ -13,7 +13,29 @@
     <h3>(Ctrl-Shift-K in Firefox)</h3>
 
     <input type="number" id="fibnum" name="fibnum" min="0" max="1000000">
-    <button id="fibcall" name="fibcall">fibonacci</button>
+    <button id="fibcall" name="fibcall" onclick="fibonacci()">fibonacci</button>
+    <br>
+    <br>
+    Result =
+    <div id="fibval"></div>
+
+    <br>
+
+    <input type="number" id="gcdA" name="a" min="0" max="1000000">
+    <input type="number" id="gcdB" name="b" min="0" max="1000000">
+    <button id="gcdcall" name="gcdcall" onclick="gcd()">gcd</button>
+    <br>
+    <br>
+    Result =
+    <div id="gcdval"></div>
+
+    <br>
+
+    <button id="rscall" name="rscall" onclick="randomStudent()">randomStudent</button>
+    <br>
+    <br>
+    Result =
+    <div id="rsval"></div>
 
     <script src="funky_town.js"></script>
   </body>
