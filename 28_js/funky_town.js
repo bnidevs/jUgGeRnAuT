@@ -1,8 +1,15 @@
 var fibonacci = (n) => {
+  var window = [0, 1];
+    
   if(n < 2){
-    return n;
+    return window[n];
   }else{
-    return fibonacci(n - 1) + fibonacci(n - 2);
+    var inc = 2;
+    while(inc <= n){
+      window[inc % 2] = window[(inc + 1) % 2] + window[inc % 2];
+      inc++;
+    }
+    return window[(inc - 1) % 2];
   }
 }
 
