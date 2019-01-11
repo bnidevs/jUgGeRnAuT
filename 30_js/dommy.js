@@ -2,6 +2,7 @@ var items = document.getElementById("thelist").childNodes;
 for(var i = 0; i < items.length; i++){
   items[i].addEventListener("click", function(event){
     document.getElementById("thelist").removeChild(event.target);
+    document.getElementById("h").innerHTML = "Hello World!";
   });
 
   items[i].addEventListener("mouseover", function(event){
@@ -45,6 +46,7 @@ var ol = () => {
 
   newitem.addEventListener("click", function(event){
     document.getElementById("thelist").removeChild(newitem);
+    document.getElementById("h").innerHTML = "Hello World!";
   });
 
   newitem.addEventListener("mouseover", function(event){
